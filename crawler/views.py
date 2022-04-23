@@ -1,7 +1,7 @@
 import logging
 from django.shortcuts import render
 
-from crawler.tasks import crawl
+from crawler.tasks import crawl_task
 from crawler.forms import CrawlActionForm
 
 logger = logging.getLogger(__name__)
@@ -14,8 +14,8 @@ def index(request):
         form = CrawlActionForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            results = crawl.delay(form.cleaned_data['url'])
-            return render(request, 'index.html', {'form': form, 'results': results.get(timeout=1)})
+            results = crawl_task.delay(form.cleaned_data['url'])
+            return render(request, 'index.html', {'form': form, 'results': results.get()})
 
     # if a GET (or any other method) we'll create a blank form
     else:

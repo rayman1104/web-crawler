@@ -1,11 +1,16 @@
+beautifulsoup4
+lxml
+watchdog
+
 pytz
 requests
+aiohttp[speedups]
 python-dotenv
 ipython
 
 # Django
 django
-django-timezone-field 
+django-timezone-field
 django-cors-headers
 django-debug-toolbar
 whitenoise
@@ -24,9 +29,3 @@ dj-database-url
 celery
 redis
 django-celery-beat
-
-# Telegram
-python-telegram-bot
-
-# monitoring
-# sentry-sdk

@@ -23,6 +23,9 @@ redis = "*"
 django-celery-beat = "*"
 python-telegram-bot = "*"
 Django = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+aiohttp = {extras = ["speedups"], version = "*"}
 
 [dev-packages]
 
