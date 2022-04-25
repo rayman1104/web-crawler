@@ -4,6 +4,10 @@
   <input type="submit" value="Go" />
 </form>
 
+{% if results %}
+<p>Number of results: {{ results|length }}</p>
+{% endif %}
+
 {% for result in results %}
-  <div>{{ result }}</div>
+  <div><a href="{{ result }}">{{ result }}</a></div>
 {% endfor %}
